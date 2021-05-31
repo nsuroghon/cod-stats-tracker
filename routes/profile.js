@@ -1,5 +1,5 @@
 const express = require('express');
-const axios = require('axios');
+const fetch = require('node-fetch');
 const router = express.Router();
 
 
@@ -22,7 +22,7 @@ router.get('/:gamertag/:platform', async (req,res) => {
     // converting our response to json format
         const data = await response.json;
 
-        res.json();
+        res.json(data);
 
     } catch (err) {
         console.error(err);
