@@ -11,13 +11,6 @@ router.get('/:gamertag/:platform', async (req,res) => {
 
     const {platform, gamertag} = req.params
 
-    // const response = await fetch(`${process.env.API_URL}/warzone/${gamertag}
-    //     /${platform}`, 
-    //     {
-    //         headers
-    //     }
-    //      );
-
     const response = fetch("https://call-of-duty-modern-warfare.p.rapidapi.com/warzone/Amartin743/psn", {
         "method": "GET",
         "headers": {
