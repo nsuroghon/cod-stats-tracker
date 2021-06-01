@@ -11,20 +11,12 @@ router.get('/:gamertag/:platform', async (req,res) => {
 
     const {platform, gamertag} = req.params
 
-    const response = fetch("https://call-of-duty-modern-warfare.p.rapidapi.com/warzone/Amartin743/psn", {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-key": "fc509d822bmsh92cf9ffa88cf7ecp101677jsnc37a759992c1",
-            "x-rapidapi-host": "call-of-duty-modern-warfare.p.rapidapi.com"
+    const response = await fetch(`${process.env.API_URL}/warzone/${gamertag}
+        /${platform}`, 
+        {
+            headers
         }
-    })
-
-    .then(response => {
-        console.log(response);
-    })
-    .catch(err => {
-        console.error(err);
-    });
+         );
 
     // converting our response to json format
         const data = await response.json();
